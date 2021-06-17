@@ -1,0 +1,64 @@
+{
+  "name": "emanate/laravel-vcard",
+  "description": "Supercharged vCard in Laravel",
+  "keywords": [
+    "emanate",
+    "laravel-vcard"
+  ],
+  "homepage": "https://github.com/emanatecodes/laravel-vcard",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/emanatecodes/laravel-vcard/issues",
+    "source": "https://github.com/emanatecodes/laravel-vcard"
+  },
+  "authors": [
+    {
+      "name": "Alpha Olomi",
+      "email": "alphaolomi@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.4|^8.0",
+    "illuminate/contracts": "^8.0",
+    "jeroendesloovere/vcard": "^1.7"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0",
+    "phpunit/phpunit": "^9.3",
+    "vimeo/psalm": "^3.11"
+  },
+  "autoload": {
+    "psr-4": {
+      "Emanate\\VCard\\": "src"      
+    },
+    "files": [
+      "src/functions.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Emanate\\VCard\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "psalm": "vendor/bin/psalm",
+    "test": "vendor/bin/phpunit --colors=always",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Emanate\\VCard\\VCardServiceProvider"
+      ],
+      "aliases": {
+        "VCard": "Emanate\\VCard\\Facades\\VCard"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
